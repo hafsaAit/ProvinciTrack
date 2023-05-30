@@ -136,12 +136,12 @@
                                     <td>
                                     <a href="editerAbsence.php?idAbsence=<?php echo $Absence['Id_Absence'] ?>">
 
-                                           <span class="glyphicon glyphicon-edit"></span>
+                                    <i class="fas fa-pencil-alt" style="color: blue;"></i>
                                         </a>
                                             &nbsp;
                                         <a onclick="return confirm('Etes vous sur de vouloir supprimer cette absence?')"
                                            href="supprimerAbsence.php?Id_Absence=<?php echo $Absence['Id_Absence'] ?>">
-                                           <span class="glyphicon glyphicon-trash"></span>
+                                           <i class="fas fa-trash-alt" style="color: red;"></i>
                                            </a>
                                         </td>
 

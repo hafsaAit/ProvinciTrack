@@ -71,7 +71,7 @@ if ($reste === 0) {
 
      
         <div class="container">
-        <div class="panel panel-success" style="margin-top: 315px;">
+        <div class="panel panel-success" style="margin-top: 345px;">
 
 
             
@@ -162,30 +162,40 @@ if ($reste === 0) {
                                     <td><?php echo $stagiaire['TypeDivision'] ?></td>
 
                                     
-                                    <td>
-    <a href="imprimerAttestation.php?idStagiaire=<?php echo $stagiaire['idStagiaire'] ?>" target="_blank">
-        <i class="fas fa-print"></i> Imprimer 
-    </a>
+                                
            
+                                    <td>
+    <a href="imprimerAttestation.php?idStagiaire=<?php echo $stagiaire['idStagiaire'] ?>" target="_blank" class="btn btn-primary" style="background-color: #6495ED; width: 100px;">
+        <i class="fas fa-print"></i> Imprimer
+    </a>
+    <style>
+        .btn-primary:hover, .btn-primary:focus {
+            background-color: #87CEEB; /* Couleur de fond lors du survol (bleu ciel) */
+            color: #FFFFFF; /* Couleur du texte lors du survol */
+            outline: none; /* Supprimer l'effet de focus lors du survol */
+        }
+    </style>
+</td>
+
+
+
   
 
                                     
                                     
-                                     <?php if ($_SESSION['user']['role']== 'ADMIN') {?>
-                                        <td>
-                                            <a href="editerStagiaire.php?idS=<?php echo $stagiaire['idStagiaire'] ?>">
-                                                <span class="glyphicon glyphicon-edit"></span>
-                                            </a>
-                                            &nbsp;
-                                            <a onclick="return confirm('Etes vous sur de vouloir supprimer le stagiaire')"
-                                            href="supprimerStagiaire.php?idS=<?php echo $stagiaire['idStagiaire'] ?>">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </td>
+<?php if ($_SESSION['user']['role'] == 'ADMIN') {?>
+    <td>
+        <a href="editerStagiaire.php?idS=<?php echo $stagiaire['idStagiaire'] ?>">
+            <i class="fas fa-pencil-alt" style="color: blue;"></i>
+        </a>
+        &nbsp;
+        <a onclick="return confirm('Êtes-vous sûr de vouloir supprimer le stagiaire !')"
+           href="supprimerStagiaire.php?idS=<?php echo $stagiaire['idStagiaire'] ?>">
+            <i class="fas fa-trash-alt" style="color: red;"></i>
+        </a>
+    </td>
+<?php }?>
 
-                                        
-                
-                                    <?php }?>
 
                                     
                                     

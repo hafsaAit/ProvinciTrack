@@ -29,7 +29,7 @@
                 <div class="panel-body">
                     <form method="post" action="updateFiliere.php" class="form">
 						<div class="form-group">
-                             <label for="niveau">id de la filière: <?php echo $idf ?></label>
+                             
                             <input type="hidden" name="idF" 
                                    class="form-control"
                                     value="<?php echo $idf ?>"/>

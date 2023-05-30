@@ -74,7 +74,8 @@
                                         &nbsp;&nbsp;
                                         <a onclick="return confirm('Etes vous sur de vouloir supprimer cet utilisateur')"
                                             href="supprimerUtilisateur.php?idUser=<?php echo $user['iduser'] ?>">
-                                                <span class="glyphicon glyphicon-trash"></span>
+                                            <i class="fas fa-trash-alt" style="color: red;"></i>
+        
                                         </a>
                                         &nbsp;&nbsp;
                 <a href="activerUtilisateur.php?idUser=<?php echo $user['iduser'] ?>&etat=<?php echo $user['etat']  ?>">  

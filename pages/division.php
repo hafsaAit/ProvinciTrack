@@ -95,12 +95,12 @@ else
             <?php if ($_SESSION['user']['role'] == 'ADMIN') { ?>
                 <td>
                     <a href="editerDivision.php?idF=<?php echo $Division['IdDivision'] ?>">
-                        <span class="glyphicon glyphicon-edit"></span>
+                    <i class="fas fa-pencil-alt" style="color: blue;"></i>
                     </a>
                     &nbsp;
                     <a onclick="return confirm('Etes vous sur de vouloir supprimer la division')"
                        href="supprimerDivision.php?idF=<?php echo $Division['IdDivision'] ?>">
-                        <span class="glyphicon glyphicon-trash"></span>
+                       <i class="fas fa-trash-alt" style="color: red;"></i>
                     </a>
                 </td>
             <?php } ?>

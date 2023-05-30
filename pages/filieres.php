@@ -98,8 +98,6 @@ if (!$resultatF) {
            value="<?php echo $Université ?>"/>
 </div>
 
-                        
-                        <label for="niveau">Niveau:</label>
 			            <select name="niveau" class="form-control" id="niveau"
                                 onchange="this.form.submit()">
                             <option value="all" <?php if($niveau==="all") echo "selected" ?>>Tous les niveaux</option>
@@ -153,18 +151,19 @@ if (!$resultatF) {
                                     <td><?php echo $filiere['nomFiliere'] ?> </td>
                                     <td><?php echo $filiere['niveau'] ?> </td> 
                                     
-                                     <?php if ($_SESSION['user']['role']== 'ADMIN') {?>
-                                        <td>
-                                            <a href="editerFiliere.php?idF=<?php echo $filiere['idFiliere'] ?>">
-                                                <span class="glyphicon glyphicon-edit"></span>
-                                            </a>
-                                            &nbsp;
-                                            <a onclick="return confirm('Etes vous sur de vouloir supprimer la filière')"
-                                                href="supprimerFiliere.php?idF=<?php echo $filiere['idFiliere'] ?>">
-                                                    <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </td>
-                                    <?php }?>
+                                    <?php if ($_SESSION['user']['role'] == 'ADMIN') {?>
+    <td>
+        <a href="editerFiliere.php?idF=<?php echo $filiere['idFiliere'] ?>">
+            <i class="fas fa-pencil-alt" style="color: blue;"></i>
+        </a>
+        &nbsp;
+        <a onclick="return confirm('Êtes-vous sûr de vouloir supprimer la filière !')"
+           href="supprimerFiliere.php?idF=<?php echo $filiere['idFiliere'] ?>">
+            <i class="fas fa-trash-alt" style="color: red;"></i>
+        </a>
+    </td>
+<?php }?>
+
                                     
                                 </tr>
                             <?PHP } ?>

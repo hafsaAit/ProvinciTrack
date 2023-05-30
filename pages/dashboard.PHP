@@ -305,7 +305,7 @@ h1.dashboard-title {
            plugins: {
                title: {
                    display: true,
-                   text: "Nombre de stagiaires par mois de l'année 2023"
+                   text: "Diagramme des effectifs mensuels de stagiaires pour l'année 2023"
                }
            }
        }
@@ -329,25 +329,37 @@ h1.dashboard-title {
     var pieChartCanvas = document.getElementById('pieChart').getContext('2d');
 
     var pieChart = new Chart(pieChartCanvas, {
-        type: 'pie',
-        data: {
-            labels: labels,
-            datasets: [{   
-                data: percentages,
-                backgroundColor: ['#c8e7ff', '#f3c4fb' ,'#d8bbff', '#d0d1ff' ,'#dfe7fd',
-               '#deaaff' , '#e0e1dd' , '#eee4e1' ] // Mettez à jour les couleurs si nécessaire
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: ' Répartition des stagiaires par chaque division'
-                }
-            }
+    type: 'pie',
+    data: {
+        labels: labels,
+        datasets: [{   
+            data: percentages,
+            backgroundColor: ['#c8e7ff', '#f3c4fb' ,'#d8bbff', '#d0d1ff' ,'#dfe7fd',
+           '#deaaff' , '#e0e1dd' , '#eee4e1' ] // Mettez à jour les couleurs si nécessaire
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Répartition des stagiaires par chaque division'
+            },
+            tooltip: {
+    callbacks: {
+        label: function(context) {
+            var label = context.label || '';
+            var value = context.parsed || 0;
+            var formattedValue = value % 1 === 0 ? value.toFixed(0) : value.toFixed(2);
+            return label + ' ' + formattedValue + '%';
         }
-    });
+    }
+}
+
+        }
+    }
+});
+
 </script>
 
 

@@ -52,7 +52,7 @@ if ($absence) {
         <div class="panel-body">
             <form method="post" action="updateAbsence.php" class="form" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="idAbsence">id d'absence: <?php echo $idAbsence ?></label>
+                    
                     <input type="hidden" name="idAbsence" class="form-control" value="<?php echo $idAbsence ?>"/>
                 </div>
                 <div class="form-group">

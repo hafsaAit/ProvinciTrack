@@ -45,7 +45,7 @@
                 <div class="panel-body">
                     <form method="post" action="updateStagiaire.php" class="form"  enctype="multipart/form-data">
 						<div class="form-group">
-                             <label for="idS">id du stagiaire: <?php echo $idS ?></label>
+                            
                             <input type="hidden" name="idS" class="form-control" value="<?php echo $idS ?>"/>
                         </div>
                         <div class="form-group">
