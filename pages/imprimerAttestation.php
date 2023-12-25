@@ -104,7 +104,7 @@ if ($stagiaire = $resultatStagiaire->fetch()) {
     <div class="footer">
         <p>Fait le : <?php echo date('d/m/Y'); ?></p>
        
-        <p>Nom du responsable :</p>
+        <p>Nom du responsable : </p>
         <p>Signature : _________</p>
     </div>
 </body>
